@@ -1,6 +1,6 @@
-import Link from "next/link"
 import Image from "next/image"
 import { RotatingText } from "@/components/shared/rotating-text"
+import { MagneticButton } from "@/components/shared/magnetic-button"
 
 export function Hero() {
   return (
@@ -22,18 +22,18 @@ export function Hero() {
           <RotatingText />
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link
+          <MagneticButton
             href="/download"
-            className="rounded-full bg-surf-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-surf-600 hover:shadow-xl"
+            className="rounded-full bg-surf-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-colors hover:bg-surf-600"
           >
             Get the App
-          </Link>
-          <Link
+          </MagneticButton>
+          <MagneticButton
             href="/partner"
-            className="rounded-full border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-all hover:border-white/60 hover:bg-white/10"
+            className="rounded-full border-2 border-white/30 px-8 py-3.5 text-base font-semibold text-white transition-colors hover:border-white/60 hover:bg-white/10"
           >
             Partner With Us
-          </Link>
+          </MagneticButton>
         </div>
       </div>
     </section>

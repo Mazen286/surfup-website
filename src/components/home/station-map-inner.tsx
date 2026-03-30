@@ -41,7 +41,7 @@ function FitBounds({ stations }: { stations: Station[] }) {
     if (stations.length === 0) return
 
     if (stations.length === 1) {
-      map.setView([stations[0].latitude, stations[0].longitude], 15)
+      map.setView([stations[0].latitude, stations[0].longitude], 16)
     } else {
       const bounds = L.latLngBounds(
         stations.map((s) => [s.latitude, s.longitude])

@@ -43,7 +43,8 @@ export function WhyItMatters() {
                 alt="SurfPod automated surfboard rental station at a beach"
                 width={800}
                 height={500}
-                className="h-auto max-h-[500px] w-full object-cover"
+                className="max-h-[500px] w-full object-cover"
+                style={{ height: "auto", width: "auto" }}
               />
             </div>
           </FadeIn>

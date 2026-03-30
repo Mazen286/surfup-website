@@ -37,7 +37,7 @@ function StatItem({ value, suffix, label, active }: { value: number; suffix: str
   const count = useCountUp(value, active)
 
   return (
-    <div className="text-center">
+    <div className="relative z-10 text-center">
       <p className="text-4xl font-extrabold text-white sm:text-5xl">
         {count}
         <span className="text-surf-400">{suffix}</span>
@@ -73,8 +73,14 @@ export function Stats() {
 
   return (
     <CursorGlow className="noise-overlay bg-ocean-950 py-20 sm:py-24">
-      <div ref={ref} className="mx-auto max-w-4xl px-6">
-        <div className="grid grid-cols-3 gap-8">
+      <div ref={ref} className="relative mx-auto max-w-4xl px-6">
+        <div
+          className="morph-blob pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[400px] opacity-20 blur-3xl sm:h-[350px] sm:w-[500px]"
+          style={{
+            background: "linear-gradient(135deg, #0ea5e9 0%, #38bdf8 40%, #0284c7 100%)",
+          }}
+        />
+        <div className="relative z-10 grid grid-cols-3 gap-8">
           {STATS.map((stat) => (
             <StatItem key={stat.label} {...stat} active={active} />
           ))}

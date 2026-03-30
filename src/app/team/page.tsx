@@ -7,16 +7,18 @@ import { TEAM, ADVISORS } from "@/lib/constants"
 import type { TeamMember } from "@/lib/constants"
 import { CursorGlow } from "@/components/shared/cursor-glow"
 import { FadeIn } from "@/components/shared/fade-in"
+import { TiltCard } from "@/components/shared/tilt-card"
 
 function PersonCard({ person, index }: { person: TeamMember; index: number }) {
   const [hovered, setHovered] = useState(false)
 
   return (
     <FadeIn delay={index * 100}>
+      <TiltCard>
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="group relative overflow-hidden rounded-2xl bg-ocean-900 transition-all duration-500 hover:shadow-xl hover:shadow-surf-500/10"
+        className="group relative overflow-hidden rounded-2xl bg-ocean-900 transition-shadow duration-500 hover:shadow-xl hover:shadow-surf-500/10"
       >
         <div className="relative aspect-[3/4] overflow-hidden">
           <Image
@@ -58,6 +60,7 @@ function PersonCard({ person, index }: { person: TeamMember; index: number }) {
           )}
         </div>
       </div>
+      </TiltCard>
     </FadeIn>
   )
 }

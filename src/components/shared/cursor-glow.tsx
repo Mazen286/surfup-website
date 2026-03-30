@@ -25,7 +25,7 @@ export function CursorGlow({
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={() => setActive(false)}
-      className={`relative overflow-hidden ${className}`}
+      className={`relative ${className}`}
     >
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-500"
