@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+
+  /* Ocean-inspired palette */
+  --ocean-950: #0a1628;
+  --ocean-900: #0f2440;
+  --ocean-800: #163a5f;
+  --ocean-700: #1e5080;
+  --ocean-600: #2563eb;
+  --sand-100: #fef3c7;
+  --sand-50: #fffbeb;
+  --coral-500: #f97316;
+  --coral-600: #ea580c;
+  --surf-400: #38bdf8;
+  --surf-500: #0ea5e9;
+  --surf-600: #0284c7;
+  --white: #ffffff;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  --primary: var(--surf-500);
+  --primary-foreground: #ffffff;
+  --border: #e2e8f0;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-ocean-950: var(--ocean-950);
+  --color-ocean-900: var(--ocean-900);
+  --color-ocean-800: var(--ocean-800);
+  --color-ocean-700: var(--ocean-700);
+  --color-ocean-600: var(--ocean-600);
+  --color-sand-100: var(--sand-100);
+  --color-sand-50: var(--sand-50);
+  --color-coral-500: var(--coral-500);
+  --color-coral-600: var(--coral-600);
+  --color-surf-400: var(--surf-400);
+  --color-surf-500: var(--surf-500);
+  --color-surf-600: var(--surf-600);
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
+  --color-slate-800: var(--slate-800);
+  --color-slate-900: var(--slate-900);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
