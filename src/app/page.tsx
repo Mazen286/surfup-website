@@ -1,8 +1,9 @@
 import { Hero } from "@/components/home/hero"
 import { HowItWorks } from "@/components/home/how-it-works"
-import { Products } from "@/components/home/products"
+import { WhyItMatters } from "@/components/home/why-it-matters"
+import { Stats } from "@/components/home/stats"
+import { StationMap } from "@/components/home/station-map"
 import { MediaLogos } from "@/components/home/media-logos"
-import { Testimonial } from "@/components/home/testimonial"
 import { DownloadCta } from "@/components/home/download-cta"
 
 export default function HomePage() {
@@ -10,9 +11,10 @@ export default function HomePage() {
     <>
       <Hero />
       <HowItWorks />
-      <Products />
+      <WhyItMatters />
+      <Stats />
+      <StationMap />
       <MediaLogos />
-      <Testimonial />
       <DownloadCta />
     </>
   )

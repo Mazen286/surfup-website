@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { COMPANY_NAME, COMPANY_EMAIL, SOCIAL, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
 
@@ -8,9 +9,15 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <p className="text-xl font-bold text-white">SurfUp</p>
+            <Image
+              src="/images/logo-white.png"
+              alt="SurfUp"
+              width={120}
+              height={36}
+              className="h-8 w-auto"
+            />
             <p className="mt-3 text-sm leading-relaxed">
-              Automated surfboard and snowboard rentals. Grab a board and go.
+              Making it easier to do the things that matter more in person.
             </p>
           </div>
 
@@ -19,6 +26,7 @@ export function Footer() {
             <p className="font-semibold text-white">Company</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
+              <li><Link href="/partner" className="hover:text-white">Partner</Link></li>
               <li><Link href="/team" className="hover:text-white">Team</Link></li>
               <li><Link href="/download" className="hover:text-white">Download</Link></li>
             </ul>
@@ -29,7 +37,7 @@ export function Footer() {
             <p className="font-semibold text-white">Legal</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-white">Terms of Service</Link></li>
+              <li><Link href="/terms" className="hover:text-white">Terms & Conditions</Link></li>
             </ul>
           </div>
 

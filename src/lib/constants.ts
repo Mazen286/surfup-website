@@ -1,8 +1,8 @@
 export const COMPANY_NAME = "SurfUp"
 export const SITE_URL = "https://surfupapp.com"
 export const COMPANY_EMAIL = "aloha@surfupapp.com"
-export const APP_STORE_URL = "https://bit.ly/surfuptheapp"
-export const PLAY_STORE_URL = "https://bit.ly/surfupgoogleapp"
+export const APP_STORE_URL = "https://apps.apple.com/us/app/surfup/id1525152192"
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.surfup.aloha"
 
 export const SOCIAL = {
   facebook: "https://www.facebook.com/surfupapp",
@@ -73,15 +73,15 @@ export const ADVISORS: TeamMember[] = [
 ]
 
 export const MEDIA = [
-  { name: "ABC 10 News San Diego", logo: "/images/media/abc10.svg" },
-  { name: "CBS 8", logo: "/images/media/cbs8.svg" },
-  { name: "San Diego Union-Tribune", logo: "/images/media/sdut.svg" },
-  { name: "Spectrum News 1", logo: "/images/media/spectrum.svg" },
-  { name: "UC San Diego", logo: "/images/media/ucsd.svg" },
+  { name: "ABC 10 News San Diego", logo: "/images/media/abc10.webp" },
+  { name: "CBS 8", logo: "/images/media/cbs8.webp" },
+  { name: "San Diego Union-Tribune", logo: "/images/media/sdut.jpg" },
+  { name: "Spectrum News 1", logo: "/images/media/spectrum.webp" },
+  { name: "UC San Diego", logo: "/images/media/ucsd.webp" },
 ] as const
 
 export const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },
-  { label: "Products", href: "/#products" },
+  { label: "Partner", href: "/partner" },
   { label: "Team", href: "/team" },
 ] as const
