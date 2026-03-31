@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
@@ -10,6 +11,8 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
+  const hasDarkHero = pathname === "/" || pathname === "/team" || pathname === "/download"
 
   useEffect(() => {
     setMounted(true)
@@ -22,7 +25,7 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
-        !mounted || scrolled || open
+        !mounted || scrolled || open || !hasDarkHero
           ? "bg-ocean-950/95 backdrop-blur-md"
           : "bg-transparent"
       }`}

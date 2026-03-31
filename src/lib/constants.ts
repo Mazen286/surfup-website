@@ -23,14 +23,14 @@ export const TEAM: TeamMember[] = [
     role: "CEO / Co-Founder",
     bio: "",
     image: "/images/team/christian.jpg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/christianhissom/",
   },
   {
     name: "Jonathan Burris",
     role: "CTO / Co-Founder",
     bio: "",
     image: "/images/team/jonathan.jpg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/jonathan-burris/",
   },
   {
     name: "Mazen Abugharbieh",
@@ -44,21 +44,21 @@ export const TEAM: TeamMember[] = [
     role: "CFO / Co-Founder",
     bio: "",
     image: "/images/team/mishal.jpg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/mishalrawaf/",
   },
   {
     name: "Albert Liu",
     role: "VP of Strategy",
     bio: "",
     image: "/images/team/albert.jpg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/albertliu/",
   },
   {
     name: "Malcolm McSwain",
     role: "Full Stack Developer",
     bio: "",
     image: "/images/team/malcolm.jpg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/malcolmmcswain/",
   },
 ]
 
