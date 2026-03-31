@@ -20,7 +20,7 @@ const VENUE_TYPES = [
 
 const VALUE_PROPS = [
   { icon: Clock, title: "24/7 Availability", description: "Stations operate around the clock. No opening hours, no closing time." },
-  { icon: Users, title: "Zero Staffing", description: "Fully automated. No employees needed to manage rentals." },
+  { icon: Users, title: "Minimal Overhead", description: "The app handles rentals, payments, and customer support. Your team steps in only when needed." },
   { icon: DollarSign, title: "New Revenue Stream", description: "Earn from every rental at your location with no upfront cost." },
   { icon: Wrench, title: "We Handle Everything", description: "Installation, maintenance, software updates, and customer support." },
 ]
@@ -100,7 +100,7 @@ export default function PartnerPage() {
             {STEPS.map((step, i) => (
               <FadeIn key={step.number} delay={i * 150}>
                 <div>
-                  <p className="text-4xl font-extrabold text-surf-500/20">
+                  <p className="text-4xl font-extrabold text-surf-500/40">
                     {step.number}
                   </p>
                   <h3 className="mt-2 text-xl font-bold text-ocean-950">
@@ -153,7 +153,7 @@ export default function PartnerPage() {
               Why Partner
             </p>
             <h2 className="mt-3 text-3xl font-bold text-ocean-950 sm:text-4xl">
-              No staffing. No scheduling. No friction.
+              Less overhead. More revenue. No friction.
             </h2>
           </FadeIn>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">

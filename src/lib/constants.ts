@@ -53,6 +53,13 @@ export const TEAM: TeamMember[] = [
     image: "/images/team/albert.jpg",
     linkedin: "",
   },
+  {
+    name: "Malcolm McSwain",
+    role: "Full Stack Developer",
+    bio: "",
+    image: "/images/team/malcolm.jpg",
+    linkedin: "",
+  },
 ]
 
 export const ADVISORS: TeamMember[] = [
