@@ -14,9 +14,10 @@ export function DeleteAccountForm() {
           Request Received
         </p>
         <p className="mt-2 text-sm text-ocean-700">
-          We&apos;ve received your account deletion request for{" "}
-          <span className="font-medium">{email}</span>. Our team will process
-          this within 48 hours and send you a confirmation email.
+          We&apos;ve received your request. For your security, we&apos;ll
+          send a verification email to{" "}
+          <span className="font-medium">{email}</span> to confirm you own this
+          account before processing the deletion.
         </p>
       </div>
     )

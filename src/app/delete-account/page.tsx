@@ -46,6 +46,12 @@ export default function DeleteAccountPage() {
 
         <DeleteAccountForm />
 
+        <p className="mt-6 text-xs text-ocean-700/60">
+          For your security, all deletion requests are verified via email
+          before being processed. No account will be deleted without
+          confirmation from the account owner.
+        </p>
+
         <p className="mt-8 text-sm text-ocean-700">
           You can also delete your account directly in the SurfUp app under{" "}
           <span className="font-medium text-ocean-950">
