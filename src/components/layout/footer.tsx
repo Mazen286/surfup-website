@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { COMPANY_NAME, COMPANY_EMAIL, SOCIAL, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
 
@@ -9,11 +8,10 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Image
-              src="/images/logo-white.png"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-white.svg"
               alt="SurfUp"
-              width={120}
-              height={36}
               className="h-8 w-auto"
             />
             <p className="mt-3 text-sm leading-relaxed">

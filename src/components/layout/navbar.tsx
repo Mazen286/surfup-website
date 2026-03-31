@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { NAV_LINKS } from "@/lib/constants"
 
@@ -32,11 +31,10 @@ export function Navbar() {
     >
       <nav aria-label="Main navigation" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/">
-          <Image
-            src="/images/logo-white.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo-white.svg"
             alt="SurfUp"
-            width={120}
-            height={36}
             className="h-8 w-auto"
           />
         </Link>
