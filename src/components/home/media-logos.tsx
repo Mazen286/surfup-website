@@ -5,9 +5,9 @@ import { FadeIn } from "@/components/shared/fade-in"
 
 function LogoSet() {
   return (
-    <div className="flex shrink-0 items-center">
-      {MEDIA.map((outlet) => (
-        <div key={outlet.name} className="mx-12 shrink-0 sm:mx-16">
+    <>
+      {MEDIA.map((outlet, i) => (
+        <div key={`${outlet.name}-${i}`} className="mx-10 shrink-0 sm:mx-14">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={outlet.logo}
@@ -16,7 +16,7 @@ function LogoSet() {
           />
         </div>
       ))}
-    </div>
+    </>
   )
 }
 
@@ -31,7 +31,9 @@ export function MediaLogos() {
         </FadeIn>
       </div>
       <div className="relative mt-10 overflow-hidden">
-        <div className="animate-marquee flex">
+        <div className="animate-marquee flex shrink-0">
+          <LogoSet />
+          <LogoSet />
           <LogoSet />
           <LogoSet />
         </div>
