@@ -3,22 +3,30 @@ import Image from "next/image"
 import { Building2, GraduationCap, Hotel, Palmtree, Clock, Wrench, DollarSign, Users } from "lucide-react"
 import { FadeIn } from "@/components/shared/fade-in"
 import { PartnerForm } from "@/components/partner/partner-form"
+import { COMPANY_NAME, OG_IMAGE } from "@/lib/constants"
 
 export const metadata: Metadata = {
-  title: "Partner With SurfUp | Surfboard Rental Stations for Hotels & Resorts",
+  title: "Partner With SurfUp | Surfboard Rental Stations",
   description:
-    "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations require no staffing, no scheduling, and work 24/7. Contact us to get started.",
+    "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations need no staff and work 24/7.",
   alternates: { canonical: "/partner" },
   openGraph: {
-    title: "Partner With SurfUp | Surfboard Rental Stations for Hotels & Resorts",
+    type: "website",
+    locale: "en_US",
+    siteName: COMPANY_NAME,
+    title: "Partner With SurfUp | Surfboard Rental Stations",
     description:
-      "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations work 24/7 with no staffing needed.",
-    url: "/partner",
+      "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations work 24/7.",
+    url: "https://www.surfupapp.com/partner",
+    images: [OG_IMAGE],
   },
   twitter: {
+    card: "summary_large_image",
+    site: "@surfupapp",
     title: "Partner With SurfUp",
     description:
       "Bring automated surfboard rentals to your hotel, resort, or campus.",
+    images: ["/images/og-default.jpg"],
   },
 }
 

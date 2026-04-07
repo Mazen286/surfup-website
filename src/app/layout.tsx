@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
-import { COMPANY_NAME, SITE_URL, COMPANY_EMAIL } from "@/lib/constants"
+import { COMPANY_NAME, SITE_URL, COMPANY_EMAIL, OG_IMAGE } from "@/lib/constants"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -21,17 +21,18 @@ export const metadata: Metadata = {
     template: `%s | ${COMPANY_NAME}`,
   },
   description:
-    "Rent a surfboard in seconds with SurfUp. Find a SurfPod station near you in Hawaii or San Diego, scan the app, grab your board, and go. Available 24/7, no lines, no hassle.",
+    "Rent a surfboard in seconds with SurfUp. Find a SurfPod near you in Hawaii or San Diego, scan, and go. Available 24/7.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: COMPANY_NAME,
-    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630 }],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     site: "@surfupapp",
+    images: ["/images/og-default.jpg"],
   },
 }
 
@@ -67,6 +68,12 @@ const jsonLd = {
       description:
         "Self-service surfboard rental stations available 24/7 at beaches, resorts, and campuses in Hawaii and San Diego.",
       priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "San Diego",
+        addressRegion: "CA",
+        addressCountry: "US",
+      },
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -78,6 +85,7 @@ const jsonLd = {
     },
     {
       "@type": "Service",
+      "@id": `${SITE_URL}/#service`,
       name: "Surfboard Rental",
       provider: { "@id": `${SITE_URL}/#organization` },
       serviceType: "Surfboard Rental",
@@ -87,8 +95,14 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
       name: COMPANY_NAME,
       url: SITE_URL,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${SITE_URL}/?q={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "MobileApplication",

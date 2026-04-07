@@ -1,20 +1,28 @@
 import type { Metadata } from "next"
+import { COMPANY_NAME, OG_IMAGE } from "@/lib/constants"
 
 export const metadata: Metadata = {
-  title: "Our Team",
+  title: "Meet the Team Behind Automated Surfboard Rentals",
   description:
-    "Meet the team behind SurfUp. Founded in San Diego, our leadership team brings expertise in hardware, software, data, and operations to automated surfboard rentals.",
+    "Meet the SurfUp team. Founded in San Diego, we bring expertise in hardware, software, and operations to surfboard rentals.",
   alternates: { canonical: "/team" },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: COMPANY_NAME,
     title: "Meet the SurfUp Team",
     description:
       "The team behind SurfUp — building automated surfboard rental stations in Hawaii and San Diego.",
-    url: "/team",
+    url: "https://www.surfupapp.com/team",
+    images: [OG_IMAGE],
   },
   twitter: {
+    card: "summary_large_image",
+    site: "@surfupapp",
     title: "Meet the SurfUp Team",
     description:
       "The team behind SurfUp — building automated surfboard rental stations in Hawaii and San Diego.",
+    images: ["/images/og-default.jpg"],
   },
 }
 

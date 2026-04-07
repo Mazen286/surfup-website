@@ -1,22 +1,29 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
+import { APP_STORE_URL, PLAY_STORE_URL, COMPANY_NAME, OG_IMAGE } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Download the SurfUp App",
   description:
-    "Download the SurfUp app for iPhone or Android. Rent surfboards from automated SurfPod stations in Hawaii and San Diego. Contactless, self-service, available 24/7.",
+    "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii and San Diego. Available 24/7.",
   alternates: { canonical: "/download" },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: COMPANY_NAME,
     title: "Download the SurfUp App",
     description:
-      "Download the SurfUp app for iPhone or Android. Rent surfboards from automated SurfPod stations in Hawaii and San Diego.",
-    url: "/download",
+      "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii and San Diego.",
+    url: `https://www.surfupapp.com/download`,
+    images: [OG_IMAGE],
   },
   twitter: {
+    card: "summary_large_image",
+    site: "@surfupapp",
     title: "Download the SurfUp App",
     description:
       "Rent surfboards in seconds. Download SurfUp for iPhone or Android.",
+    images: ["/images/og-default.jpg"],
   },
 }
 
