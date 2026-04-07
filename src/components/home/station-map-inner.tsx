@@ -5,6 +5,15 @@ import L from "leaflet"
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 
+// Fix Leaflet default icon path issue in bundled environments
+if (typeof window !== "undefined") {
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: "/images/surfup-marker.svg",
+    iconUrl: "/images/surfup-marker.svg",
+    shadowUrl: "",
+  })
+}
+
 interface Board {
   id: string
   status: string
