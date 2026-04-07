@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { COMPANY_EMAIL } from "@/lib/constants"
 
 const LOCATION_TYPES = [
   "Hotel / Resort",
@@ -14,6 +13,8 @@ const LOCATION_TYPES = [
 
 export function PartnerForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   if (submitted) {
     return (
@@ -26,14 +27,51 @@ export function PartnerForm() {
     )
   }
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setError("")
+    setLoading(true)
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+
+    try {
+      const res = await fetch("/api/partner", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          company: data.get("company"),
+          email: data.get("email"),
+          locationType: data.get("location-type"),
+          message: data.get("message"),
+          website: data.get("website"), // honeypot
+        }),
+      })
+
+      if (!res.ok) throw new Error()
+      setSubmitted(true)
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
-    <form
-      className="mt-10 space-y-5"
-      action={`mailto:${COMPANY_EMAIL}?subject=Partnership Inquiry`}
-      method="POST"
-      encType="text/plain"
-      onSubmit={() => setSubmitted(true)}
-    >
+    <form className="mt-10 space-y-5" onSubmit={handleSubmit}>
+      {/* Honeypot - hidden from real users, bots will fill it */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-white/80">
@@ -107,11 +145,15 @@ export function PartnerForm() {
           placeholder="Where are you located? How many visitors do you get? Anything else we should know."
         />
       </div>
+      {error && (
+        <p className="text-sm text-red-400">{error}</p>
+      )}
       <button
         type="submit"
-        className="w-full rounded-full bg-surf-500 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-surf-600 hover:shadow-xl sm:w-auto sm:px-10"
+        disabled={loading}
+        className="w-full rounded-full bg-surf-500 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:bg-surf-600 hover:shadow-xl disabled:opacity-50 sm:w-auto sm:px-10"
       >
-        Submit Inquiry
+        {loading ? "Sending..." : "Submit Inquiry"}
       </button>
     </form>
   )

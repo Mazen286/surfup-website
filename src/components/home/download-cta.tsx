@@ -35,7 +35,7 @@ export function DownloadCta() {
   }, [])
 
   return (
-    <CursorGlow className="noise-overlay bg-ocean-950 py-24 sm:py-32">
+    <CursorGlow className="noise-overlay overflow-hidden bg-ocean-950 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="text-center lg:text-left">

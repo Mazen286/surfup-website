@@ -72,7 +72,7 @@ export function Stats() {
   }, [])
 
   return (
-    <CursorGlow className="noise-overlay bg-ocean-950 py-20 sm:py-24">
+    <CursorGlow className="noise-overlay overflow-hidden bg-ocean-950 py-20 sm:py-24">
       <div ref={ref} className="relative mx-auto max-w-4xl px-6">
         <div
           className="morph-blob pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[400px] opacity-20 blur-3xl sm:h-[350px] sm:w-[500px]"
