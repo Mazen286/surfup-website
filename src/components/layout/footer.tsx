@@ -1,6 +1,25 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { COMPANY_NAME, COMPANY_EMAIL, SOCIAL, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
+import { COMPANY_NAME, SOCIAL, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
+
+function ObfuscatedEmail() {
+  const [email, setEmail] = useState("")
+
+  useEffect(() => {
+    setEmail(["aloha", "surfupapp.com"].join("@"))
+  }, [])
+
+  if (!email) return <span className="hover:text-white">Contact Us</span>
+
+  return (
+    <a href={`mailto:${email}`} className="hover:text-white">
+      {email}
+    </a>
+  )
+}
 
 export function Footer() {
   return (
@@ -48,9 +67,7 @@ export function Footer() {
             <h3 className="font-semibold text-white">Connect</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <a href={`mailto:${COMPANY_EMAIL}`} className="hover:text-white">
-                  {COMPANY_EMAIL}
-                </a>
+                <ObfuscatedEmail />
               </li>
               <li>
                 <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-white">
