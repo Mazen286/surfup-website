@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
@@ -24,25 +23,15 @@ export const metadata: Metadata = {
   description:
     "Rent a surfboard in seconds with SurfUp. Find a SurfPod station near you in Hawaii or San Diego, scan the app, grab your board, and go. Available 24/7, no lines, no hassle.",
   metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_URL,
     siteName: COMPANY_NAME,
-    title: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii & San Diego`,
-    description:
-      "Rent a surfboard in seconds. Find a SurfPod near you, scan the app, grab your board, and go. Available 24/7.",
     images: [{ url: "/images/og-default.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY_NAME} | Automated Surfboard Rentals`,
-    description:
-      "Rent a surfboard in seconds. Find a SurfPod near you, scan the app, grab your board, and go.",
-    images: ["/images/og-default.jpg"],
+    site: "@surfupapp",
   },
 }
 
@@ -51,6 +40,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: COMPANY_NAME,
       url: SITE_URL,
       logo: `${SITE_URL}/images/logo-white.png`,
@@ -58,11 +48,42 @@ const jsonLd = {
       description:
         "Automated surfboard rental stations in Hawaii and San Diego. Rent a board 24/7 with the SurfUp app.",
       foundingDate: "2023",
-      areaServed: ["Hawaii", "San Diego, CA"],
+      areaServed: [
+        { "@type": "State", name: "Hawaii" },
+        { "@type": "City", name: "San Diego", containedInPlace: { "@type": "State", name: "California" } },
+      ],
       sameAs: [
         "https://www.instagram.com/surfupapp",
         "https://www.facebook.com/surfupapp",
       ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#localbusiness`,
+      name: COMPANY_NAME,
+      url: SITE_URL,
+      image: `${SITE_URL}/images/og-default.jpg`,
+      email: COMPANY_EMAIL,
+      description:
+        "Self-service surfboard rental stations available 24/7 at beaches, resorts, and campuses in Hawaii and San Diego.",
+      priceRange: "$$",
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+      areaServed: ["Hawaii", "San Diego, CA"],
+      parentOrganization: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "Service",
+      name: "Surfboard Rental",
+      provider: { "@id": `${SITE_URL}/#organization` },
+      serviceType: "Surfboard Rental",
+      description:
+        "Automated self-service surfboard rentals from SurfPod stations. Scan the app, grab a board, and surf. Available 24/7 with no reservations needed.",
+      areaServed: ["Hawaii", "San Diego, CA"],
     },
     {
       "@type": "WebSite",
@@ -70,7 +91,7 @@ const jsonLd = {
       url: SITE_URL,
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "MobileApplication",
       name: "SurfUp",
       operatingSystem: "iOS, Android",
       applicationCategory: "LifestyleApplication",
@@ -81,7 +102,10 @@ const jsonLd = {
         price: "0",
         priceCurrency: "USD",
       },
-      downloadUrl: "https://bit.ly/surfuptheapp",
+      installUrl: [
+        "https://apps.apple.com/us/app/surfup/id1525152192",
+        "https://play.google.com/store/apps/details?id=com.surfup.aloha",
+      ],
     },
   ],
 }

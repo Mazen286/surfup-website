@@ -3,17 +3,19 @@
 import { useEffect, useState } from "react"
 
 const PHRASES = [
-  "Adventure starts here.",
+  "Hawaii & San Diego. Available 24/7.",
   "No reservations needed.",
-  "Available 24/7.",
   "30 seconds to surf.",
+  "Scan. Grab. Go.",
 ]
 
 export function RotatingText() {
   const [index, setIndex] = useState(0)
   const [visible, setVisible] = useState(true)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const interval = setInterval(() => {
       setVisible(false)
       setTimeout(() => {
@@ -29,8 +31,8 @@ export function RotatingText() {
     <span
       className="inline-block transition-all duration-400 ease-out"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(8px)",
+        opacity: !mounted || visible ? 1 : 0,
+        transform: !mounted || visible ? "translateY(0)" : "translateY(8px)",
       }}
     >
       {PHRASES[index]}

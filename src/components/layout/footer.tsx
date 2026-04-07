@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { COMPANY_NAME, COMPANY_EMAIL, SOCIAL, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
 
 export function Footer() {
@@ -8,10 +9,11 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/logo-white.svg"
               alt="SurfUp"
+              width={120}
+              height={32}
               className="h-8 w-auto"
             />
             <p className="mt-3 text-sm leading-relaxed">
@@ -21,7 +23,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <p className="font-semibold text-white">Company</p>
+            <h3 className="font-semibold text-white">Company</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
               <li><Link href="/partner" className="hover:text-white">Partner</Link></li>
@@ -32,7 +34,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <p className="font-semibold text-white">Legal</p>
+            <h3 className="font-semibold text-white">Legal</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-white">Terms & Conditions</Link></li>
@@ -42,7 +44,7 @@ export function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="font-semibold text-white">Connect</p>
+            <h3 className="font-semibold text-white">Connect</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
                 <a href={`mailto:${COMPANY_EMAIL}`} className="hover:text-white">

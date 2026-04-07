@@ -44,7 +44,6 @@ export function WhyItMatters() {
                 width={800}
                 height={500}
                 className="max-h-[500px] w-full object-cover"
-                style={{ height: "auto", width: "auto" }}
               />
             </div>
           </FadeIn>

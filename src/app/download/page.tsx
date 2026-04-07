@@ -7,6 +7,17 @@ export const metadata: Metadata = {
   description:
     "Download the SurfUp app for iPhone or Android. Rent surfboards from automated SurfPod stations in Hawaii and San Diego. Contactless, self-service, available 24/7.",
   alternates: { canonical: "/download" },
+  openGraph: {
+    title: "Download the SurfUp App",
+    description:
+      "Download the SurfUp app for iPhone or Android. Rent surfboards from automated SurfPod stations in Hawaii and San Diego.",
+    url: "/download",
+  },
+  twitter: {
+    title: "Download the SurfUp App",
+    description:
+      "Rent surfboards in seconds. Download SurfUp for iPhone or Android.",
+  },
 }
 
 const STEPS = [

@@ -64,7 +64,7 @@ export default function StationMapInner({
       zoom={3}
       scrollWheelZoom={false}
       className="relative z-0 h-[480px] w-full overflow-hidden rounded-2xl border border-border"
-      attributionControl={false}
+      attributionControl={true}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>'

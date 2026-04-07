@@ -5,10 +5,21 @@ import { FadeIn } from "@/components/shared/fade-in"
 import { PartnerForm } from "@/components/partner/partner-form"
 
 export const metadata: Metadata = {
-  title: "Partner With SurfUp",
+  title: "Partner With SurfUp | Surfboard Rental Stations for Hotels & Resorts",
   description:
     "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations require no staffing, no scheduling, and work 24/7. Contact us to get started.",
   alternates: { canonical: "/partner" },
+  openGraph: {
+    title: "Partner With SurfUp | Surfboard Rental Stations for Hotels & Resorts",
+    description:
+      "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations work 24/7 with no staffing needed.",
+    url: "/partner",
+  },
+  twitter: {
+    title: "Partner With SurfUp",
+    description:
+      "Bring automated surfboard rentals to your hotel, resort, or campus.",
+  },
 }
 
 const VENUE_TYPES = [

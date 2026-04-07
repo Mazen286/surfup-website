@@ -52,7 +52,7 @@ export function StationMap() {
           Find Us
         </p>
         <h2 className="mt-3 text-center text-3xl font-bold text-ocean-950 sm:text-4xl">
-          X marks the spot.
+          Find a SurfPod Station Near You
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-ocean-700">
           SurfPod stations are live and growing. Download the app for

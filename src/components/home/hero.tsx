@@ -16,7 +16,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <h1 className="text-gradient-hero text-6xl font-extrabold tracking-tight sm:text-7xl lg:text-8xl">
-          Drop in.
+          Surfboard Rentals. Drop&nbsp;In.
         </h1>
         <p className="mt-4 h-8 text-xl text-white/90 sm:text-2xl">
           <RotatingText />

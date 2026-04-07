@@ -5,6 +5,7 @@ import { LegalPage } from "@/components/shared/legal-page"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   robots: { index: false, follow: false },
+  alternates: { canonical: "/privacy" },
 }
 
 export default function PrivacyPage() {

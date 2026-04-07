@@ -12,9 +12,11 @@ export function FadeIn({
   className?: string
 }) {
   const ref = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const el = ref.current
     if (!el) return
 
@@ -36,7 +38,7 @@ export function FadeIn({
     <div
       ref={ref}
       className={`transition-all duration-500 ease-out ${
-        visible
+        !mounted || visible
           ? "translate-y-0 opacity-100"
           : "translate-y-4 opacity-0"
       } ${className}`}
