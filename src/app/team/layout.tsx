@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { COMPANY_NAME, OG_IMAGE } from "@/lib/constants"
+import { COMPANY_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Meet the Team Behind Automated Surfboard Rentals",
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     siteName: COMPANY_NAME,
     title: "Meet the SurfUp Team",
     description:
-      "The team behind SurfUp — building automated surfboard rental stations in Hawaii and San Diego.",
-    url: "https://www.surfupapp.com/team",
+      "The team behind SurfUp, building automated surfboard rental stations in Hawaii and San Diego.",
+    url: `${SITE_URL}/team`,
     images: [OG_IMAGE],
   },
   twitter: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     site: "@surfupapp",
     title: "Meet the SurfUp Team",
     description:
-      "The team behind SurfUp — building automated surfboard rental stations in Hawaii and San Diego.",
+      "The team behind SurfUp, building automated surfboard rental stations in Hawaii and San Diego.",
     images: ["/images/og-default.jpg"],
   },
 }

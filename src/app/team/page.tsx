@@ -25,6 +25,7 @@ function PersonCard({ person, index }: { person: TeamMember; index: number }) {
             src={person.image}
             alt={`${person.name}, ${person.role} at SurfUp`}
             fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ocean-950 via-ocean-950/20 to-transparent" />
@@ -74,6 +75,7 @@ function AdvisorCard({ person, index }: { person: TeamMember; index: number }) {
             src={person.image}
             alt={`${person.name}, ${person.role}`}
             fill
+            sizes="64px"
             className="object-cover"
           />
         </div>

@@ -3,12 +3,12 @@ import Image from "next/image"
 import { Building2, GraduationCap, Hotel, Palmtree, Clock, Wrench, DollarSign, Users } from "lucide-react"
 import { FadeIn } from "@/components/shared/fade-in"
 import { PartnerForm } from "@/components/partner/partner-form"
-import { COMPANY_NAME, OG_IMAGE } from "@/lib/constants"
+import { COMPANY_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Partner With SurfUp | Surfboard Rental Stations",
   description:
-    "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations need no staff and work 24/7.",
+    "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations require no staff and operate 24/7 with zero overhead.",
   alternates: { canonical: "/partner" },
   openGraph: {
     type: "website",
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     siteName: COMPANY_NAME,
     title: "Partner With SurfUp | Surfboard Rental Stations",
     description:
-      "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations work 24/7.",
-    url: "https://www.surfupapp.com/partner",
+      "Bring automated surfboard rentals to your hotel, resort, or campus. SurfPod stations operate 24/7 with no staffing needed.",
+    url: `${SITE_URL}/partner`,
     images: [OG_IMAGE],
   },
   twitter: {
@@ -79,6 +79,7 @@ export default function PartnerPage() {
                 alt="SurfPod automated surfboard rental station"
                 width={600}
                 height={400}
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="h-auto max-h-[400px] w-full object-cover"
               />
             </div>
@@ -98,6 +99,7 @@ export default function PartnerPage() {
               alt="Moniz Family Surf"
               width={180}
               height={180}
+              sizes="180px"
               className="h-20 w-auto object-contain"
             />
           </div>

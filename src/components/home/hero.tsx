@@ -10,6 +10,7 @@ export function Hero() {
         alt="Surfer walking toward the ocean at sunset"
         fill
         priority
+        sizes="100vw"
         className="animate-slow-zoom object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-950/50 via-ocean-950/30 to-ocean-950/70" />

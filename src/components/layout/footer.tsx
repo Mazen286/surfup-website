@@ -14,6 +14,7 @@ export function Footer() {
               alt="SurfUp"
               width={120}
               height={32}
+              sizes="120px"
               className="h-8 w-auto"
             />
             <p className="mt-3 text-sm leading-relaxed">

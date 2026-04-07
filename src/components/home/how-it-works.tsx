@@ -7,16 +7,19 @@ const STEPS = [
     title: "Scan",
     description: "Find a station. Scan a board to start.",
     image: "/images/app-scan.png",
+    alt: "SurfUp app showing the QR code scan screen to unlock a surfboard",
   },
   {
     title: "Surf",
     description: "Stash your stuff, grab your board, go.",
     image: "/images/app-surf.png",
+    alt: "SurfUp app showing an active surfboard rental in progress",
   },
   {
     title: "Shaka",
     description: "Bring it back and share the stoke.",
     image: "/images/app-shaka.png",
+    alt: "SurfUp app showing a completed rental and rewards screen",
   },
 ]
 
@@ -40,9 +43,10 @@ export function HowItWorks() {
                 <div className="mx-auto w-56 overflow-hidden rounded-3xl shadow-lg">
                   <Image
                     src={step.image}
-                    alt={`${step.title} step`}
+                    alt={step.alt}
                     width={400}
                     height={800}
+                    sizes="224px"
                     className="h-auto w-full"
                   />
                 </div>

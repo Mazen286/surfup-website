@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { APP_STORE_URL, PLAY_STORE_URL, COMPANY_NAME, OG_IMAGE } from "@/lib/constants"
+import { APP_STORE_URL, PLAY_STORE_URL, COMPANY_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Download the SurfUp App",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Download the SurfUp App",
     description:
       "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii and San Diego.",
-    url: `https://www.surfupapp.com/download`,
+    url: `${SITE_URL}/download`,
     images: [OG_IMAGE],
   },
   twitter: {
@@ -70,6 +70,7 @@ export default function DownloadPage() {
                     alt="Download on the App Store"
                     width={200}
                     height={67}
+                    sizes="200px"
                     className="h-16 w-auto sm:h-[72px]"
                   />
                 </a>
@@ -84,6 +85,7 @@ export default function DownloadPage() {
                     alt="Get it on Google Play"
                     width={200}
                     height={67}
+                    sizes="200px"
                     className="h-16 w-auto sm:h-[72px]"
                   />
                 </a>
@@ -95,6 +97,7 @@ export default function DownloadPage() {
                 alt="SurfUp app showing 3D map of SurfPod station"
                 width={400}
                 height={800}
+                sizes="(min-width: 640px) 256px, 224px"
                 className="h-auto w-56 rounded-3xl drop-shadow-2xl sm:w-64"
               />
             </div>

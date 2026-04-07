@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/shared/legal-page"
 
 export const metadata: Metadata = {
   title: "Terms & Conditions",
-  description: "SurfUp terms and conditions. Review the rules and guidelines for using our app and rental stations.",
+  description: "Read SurfUp's terms and conditions covering your rights and responsibilities when using our app and SurfPod surfboard rental stations.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/terms" },
 }

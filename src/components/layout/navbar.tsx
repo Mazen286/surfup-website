@@ -37,6 +37,7 @@ export function Navbar() {
             alt="SurfUp"
             width={120}
             height={32}
+            sizes="120px"
             className="h-8 w-auto"
           />
         </Link>

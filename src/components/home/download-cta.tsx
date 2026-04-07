@@ -53,6 +53,7 @@ export function DownloadCta() {
                   alt="Download on the App Store"
                   width={200}
                   height={67}
+                  sizes="200px"
                   className="h-16 w-auto sm:h-[72px]"
                 />
               </a>
@@ -62,6 +63,7 @@ export function DownloadCta() {
                   alt="Get it on Google Play"
                   width={200}
                   height={67}
+                  sizes="200px"
                   className="h-16 w-auto sm:h-[72px]"
                 />
               </a>
@@ -85,6 +87,7 @@ export function DownloadCta() {
                   alt={shot.alt}
                   width={300}
                   height={600}
+                  sizes="(min-width: 1024px) 176px, (min-width: 640px) 160px, 128px"
                   className="h-auto w-full rounded-2xl"
                 />
               </div>

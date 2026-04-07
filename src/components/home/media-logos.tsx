@@ -14,6 +14,7 @@ function LogoSet() {
             alt={outlet.name}
             width={160}
             height={64}
+            sizes="160px"
             className="h-12 w-auto object-contain opacity-50 grayscale transition-all hover:opacity-100 hover:grayscale-0 sm:h-16"
           />
         </div>

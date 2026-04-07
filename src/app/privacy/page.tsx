@@ -4,7 +4,7 @@ import { LegalPage } from "@/components/shared/legal-page"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "SurfUp privacy policy. Learn how we collect, use, and protect your personal data.",
+  description: "Read the SurfUp privacy policy to understand how we collect, use, store, and protect your personal data when you use our app and rental stations.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/privacy" },
 }

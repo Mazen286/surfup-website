@@ -3,7 +3,7 @@ import { DeleteAccountForm } from "@/components/delete-account/delete-account-fo
 
 export const metadata: Metadata = {
   title: "Delete Your Account",
-  description: "Request deletion of your SurfUp account and personal data.",
+  description: "Submit a request to permanently delete your SurfUp account and all associated personal data. Deletion is confirmed by email before processing.",
   alternates: { canonical: "/delete-account" },
   robots: { index: false, follow: false },
 }

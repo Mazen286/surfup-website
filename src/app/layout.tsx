@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: `%s | ${COMPANY_NAME}`,
   },
   description:
-    "Rent a surfboard in seconds with SurfUp. Find a SurfPod near you in Hawaii or San Diego, scan, and go. Available 24/7.",
+    "Rent a surfboard in seconds with SurfUp. Find a SurfPod station near you in Hawaii or San Diego, scan the app, and go. Available 24/7.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
@@ -56,6 +56,7 @@ const jsonLd = {
       sameAs: [
         "https://www.instagram.com/surfupapp",
         "https://www.facebook.com/surfupapp",
+        "https://twitter.com/surfupapp",
       ],
     },
     {
@@ -98,15 +99,20 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       name: COMPANY_NAME,
       url: SITE_URL,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${SITE_URL}/?q={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii & San Diego`,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
     },
     {
       "@type": "MobileApplication",
+      "@id": `${SITE_URL}/#app`,
       name: "SurfUp",
+      url: `${SITE_URL}/download`,
       operatingSystem: "iOS, Android",
       applicationCategory: "LifestyleApplication",
       description:
@@ -116,9 +122,15 @@ const jsonLd = {
         price: "0",
         priceCurrency: "USD",
       },
-      installUrl: [
+      downloadUrl: [
         "https://apps.apple.com/us/app/surfup/id1525152192",
         "https://play.google.com/store/apps/details?id=com.surfup.aloha",
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       ],
     },
   ],
@@ -134,6 +146,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col overflow-x-hidden bg-background text-foreground">
         <a
           href="#main-content"
@@ -146,10 +164,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </body>
     </html>
   )
