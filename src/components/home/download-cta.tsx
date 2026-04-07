@@ -40,11 +40,11 @@ export function DownloadCta() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="text-center lg:text-left">
             <h2 className="text-4xl font-bold text-white sm:text-5xl">
-              Ready to Ride?
+              Rent a Surfboard Today
             </h2>
             <p className="mt-6 max-w-xl text-xl text-white/90">
-              Download the SurfUp app, find a SurfPod near you, and get on the
-              water in minutes.
+              Download the SurfUp app, find a SurfPod surfboard rental station
+              near you in Hawaii or San Diego, and get on the water in minutes.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
               <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">

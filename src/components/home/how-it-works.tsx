@@ -5,19 +5,19 @@ import { FadeIn } from "@/components/shared/fade-in"
 const STEPS = [
   {
     title: "Scan",
-    description: "Find a station. Scan a board to start.",
+    description: "Find a SurfPod station in Hawaii or San Diego. Scan a surfboard to start your rental.",
     image: "/images/app-scan.png",
     alt: "SurfUp app showing the QR code scan screen to unlock a surfboard",
   },
   {
     title: "Surf",
-    description: "Stash your stuff, grab your board, go.",
+    description: "Grab your surfboard and hit the water. No reservations, no paperwork.",
     image: "/images/app-surf.png",
     alt: "SurfUp app showing an active surfboard rental in progress",
   },
   {
     title: "Shaka",
-    description: "Bring it back and share the stoke.",
+    description: "Return your board to any SurfPod when you're done. Available 24/7.",
     image: "/images/app-shaka.png",
     alt: "SurfUp app showing a completed rental and rewards screen",
   },
@@ -32,7 +32,7 @@ export function HowItWorks() {
             How It Works
           </p>
           <h2 className="mx-auto mt-3 max-w-2xl text-center text-3xl font-bold text-ocean-950 sm:text-4xl">
-            No reservations. No paperwork. No changing your plans.
+            Rent a Surfboard in Seconds
           </h2>
         </FadeIn>
 

@@ -12,7 +12,7 @@ export function WhyItMatters() {
                 Why This Matters
               </p>
               <h2 className="mt-3 text-3xl font-bold text-ocean-950 sm:text-4xl">
-                Using technology to make it more fun to have fun.
+                Automated Surfboard Rentals, Built for the Beach
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-ocean-700">
                 The best experiences require you to show up. Technology should
@@ -30,8 +30,8 @@ export function WhyItMatters() {
                 </p>
                 <p className="mt-2 text-lg leading-relaxed text-ocean-700">
                   Self-service surfboard rental stations at beaches, resorts,
-                  and campuses. Available 24/7, no staff required. Customers
-                  scan, grab a board, and go.
+                  and campuses in Hawaii and San Diego. Available 24/7, no
+                  staff required. Customers scan, grab a surfboard, and go.
                 </p>
               </div>
             </div>

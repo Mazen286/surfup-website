@@ -55,8 +55,8 @@ export function StationMap() {
           Find a SurfPod Station Near You
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-ocean-700">
-          SurfPod stations are live and growing. Download the app for
-          real-time board availability.
+          Surfboard rental stations across Hawaii and San Diego. Download
+          the app for real-time board availability.
         </p>
 
         <div className="mt-12">
