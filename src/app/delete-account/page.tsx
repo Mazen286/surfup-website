@@ -43,7 +43,7 @@ export default function DeleteAccountPage() {
             </li>
             <li className="flex gap-2">
               <span className="text-destructive">&#x2022;</span>
-              All active sessions will be revoked immediately
+              You will be logged out of all devices immediately
             </li>
             <li className="flex gap-2">
               <span className="text-destructive">&#x2022;</span>
