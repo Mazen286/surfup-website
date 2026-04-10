@@ -27,15 +27,23 @@ export default function DeleteAccountPage() {
           <ul className="mt-3 space-y-2 text-sm text-ocean-700">
             <li className="flex gap-2">
               <span className="text-destructive">&#x2022;</span>
-              Your profile and personal data will be permanently removed
+              Your profile and personal data will be anonymized
             </li>
             <li className="flex gap-2">
               <span className="text-destructive">&#x2022;</span>
-              Your rental history will be deleted
+              Payment methods and billing addresses will be deleted
+            </li>
+            <li className="flex gap-2">
+              <span className="text-destructive">&#x2022;</span>
+              All rider profiles will be anonymized
             </li>
             <li className="flex gap-2">
               <span className="text-destructive">&#x2022;</span>
               Any active rentals must be completed before deletion
+            </li>
+            <li className="flex gap-2">
+              <span className="text-destructive">&#x2022;</span>
+              All active sessions will be revoked immediately
             </li>
             <li className="flex gap-2">
               <span className="text-destructive">&#x2022;</span>

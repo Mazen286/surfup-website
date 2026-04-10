@@ -1,23 +1,24 @@
 "use client"
 
 import { useState } from "react"
-import { COMPANY_EMAIL } from "@/lib/constants"
 
 export function DeleteAccountForm() {
   const [email, setEmail] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState("")
 
   if (submitted) {
     return (
       <div className="mt-8 rounded-2xl border border-surf-400/30 bg-surf-500/5 p-6 text-center">
         <p className="text-lg font-bold text-ocean-950">
-          Request Received
+          Check Your Email
         </p>
         <p className="mt-2 text-sm text-ocean-700">
-          We&apos;ve received your request. For your security, we&apos;ll
-          send a verification email to{" "}
-          <span className="font-medium">{email}</span> to confirm you own this
-          account before processing the deletion.
+          If an account exists for{" "}
+          <span className="font-medium">{email}</span>, we&apos;ve sent a
+          confirmation email. Please check your inbox and follow the link to
+          complete the deletion.
         </p>
       </div>
     )
@@ -26,10 +27,28 @@ export function DeleteAccountForm() {
   return (
     <form
       className="mt-8 space-y-4"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault()
-        window.location.href = `mailto:${COMPANY_EMAIL}?subject=Account Deletion Request&body=Please delete the SurfUp account associated with this email: ${encodeURIComponent(email)}`
-        setSubmitted(true)
+        setError("")
+        setSubmitting(true)
+
+        try {
+          const res = await fetch("/api/delete-account", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+          })
+
+          if (!res.ok) {
+            throw new Error("Something went wrong. Please try again.")
+          }
+
+          setSubmitted(true)
+        } catch {
+          setError("Something went wrong. Please try again.")
+        } finally {
+          setSubmitting(false)
+        }
       }}
     >
       <div>
@@ -46,11 +65,17 @@ export function DeleteAccountForm() {
           className="mt-1.5 w-full rounded-xl border border-border bg-white px-4 py-3 text-ocean-950 outline-none transition-colors focus:border-surf-500"
         />
       </div>
+
+      {error && (
+        <p className="text-sm text-red-500">{error}</p>
+      )}
+
       <button
         type="submit"
-        className="w-full rounded-full bg-red-500 py-3 text-base font-semibold text-white transition-colors hover:bg-red-600"
+        disabled={submitting}
+        className="w-full rounded-full bg-red-500 py-3 text-base font-semibold text-white transition-colors hover:bg-red-600 disabled:opacity-50"
       >
-        Request Account Deletion
+        {submitting ? "Submitting\u2026" : "Request Account Deletion"}
       </button>
     </form>
   )
