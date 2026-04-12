@@ -11,7 +11,7 @@ SurfUp operates self-service SurfPod stations at beaches, resorts, and campuses.
 - [Partner With Us](https://www.surfupapp.com/partner)
 - [Our Team](https://www.surfupapp.com/team)
 - [App Store](https://apps.apple.com/us/app/surfup/id1525152192)
-- [Google Play](https://play.google.com/store/apps/details?id=com.surfup.aloha)
+- [Google Play](https://play.google.com/store/apps/details?id=com.surfupapp.aloha)
 
 ## Contact
 

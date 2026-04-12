@@ -2,7 +2,7 @@ export const COMPANY_NAME = "SurfUp"
 export const SITE_URL = "https://www.surfupapp.com"
 export const COMPANY_EMAIL = "aloha@surfupapp.com"
 export const APP_STORE_URL = "https://apps.apple.com/us/app/surfup/id1525152192"
-export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.surfup.aloha"
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.surfupapp.aloha"
 
 export const OG_IMAGE = { url: "/images/og-default.jpg", width: 1200, height: 630, alt: "SurfUp automated surfboard rental station at a beach" }
 

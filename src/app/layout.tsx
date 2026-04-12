@@ -3,7 +3,7 @@ import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
-import { COMPANY_NAME, SITE_URL, COMPANY_EMAIL, OG_IMAGE } from "@/lib/constants"
+import { COMPANY_NAME, SITE_URL, COMPANY_EMAIL, OG_IMAGE, APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -123,10 +123,7 @@ const jsonLd = {
         price: "0",
         priceCurrency: "USD",
       },
-      downloadUrl: [
-        "https://apps.apple.com/us/app/surfup/id1525152192",
-        "https://play.google.com/store/apps/details?id=com.surfup.aloha",
-      ],
+      downloadUrl: [APP_STORE_URL, PLAY_STORE_URL],
     },
     {
       "@type": "BreadcrumbList",
