@@ -149,3 +149,57 @@ body {
     background-size: 200px 200px;
   }
 }
+
+/* Station map: markers and popup styled like the app's map tooltip */
+.sup-marker-icon {
+  background: transparent;
+  border: none;
+}
+
+.sup-marker {
+  position: relative;
+  width: 24px;
+  height: 48px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+  transition: transform 0.15s ease;
+  transform-origin: bottom center;
+}
+
+.sup-marker:hover {
+  transform: scale(1.1);
+}
+
+.sup-marker img {
+  width: 24px;
+  height: 48px;
+}
+
+.sup-marker--offline img {
+  opacity: 0.5;
+}
+
+.sup-marker__dot {
+  position: absolute;
+  top: 0;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #ef4444;
+  border: 2px solid #fff;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+}

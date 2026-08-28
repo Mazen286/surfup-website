@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { APP_STORE_URL, PLAY_STORE_URL, COMPANY_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants"
+import { StationMapCanvas } from "@/components/station-map/station-map-canvas"
 
 export const metadata: Metadata = {
   title: "Download the SurfUp App",
@@ -106,6 +107,21 @@ export default function DownloadPage() {
       </section>
 
       <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-center text-2xl font-bold text-ocean-950 sm:text-3xl">
+            SurfPod Stations Near You
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-ocean-700">
+            Tap a station to see live board availability and rental prices -
+            the same view you get in the app.
+          </p>
+          <div className="mt-12">
+            <StationMapCanvas />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-20 sm:pb-24">
         <div className="mx-auto max-w-4xl px-6">
           <h2 className="text-center text-2xl font-bold text-ocean-950 sm:text-3xl">
             How It Works
