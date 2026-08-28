@@ -189,17 +189,24 @@ body {
   border: 2px solid #fff;
 }
 
-.leaflet-popup-content-wrapper {
+/* Higher specificity than leaflet.css's own rules so import order can't
+   reintroduce the default popup padding and paragraph margins */
+.leaflet-container .leaflet-popup-content-wrapper {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 0;
   overflow: hidden;
 }
 
-.leaflet-popup-content {
+.leaflet-container .leaflet-popup-content {
+  margin: 0;
+  width: auto;
+}
+
+.leaflet-container .leaflet-popup-content p {
   margin: 0;
 }
 
-.leaflet-popup-content p {
-  margin: 0;
+.leaflet-container .leaflet-popup-content a {
+  color: inherit;
 }
