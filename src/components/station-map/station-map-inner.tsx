@@ -7,7 +7,6 @@ import "leaflet/dist/leaflet.css"
 
 import type { Board, Station } from "./types"
 
-const MAX_POPUP_BOARDS = 5
 
 // The marker SVG is 1:2 (the SurfUp Dude on his board); size it like the app
 // does instead of forcing it square.
@@ -24,6 +23,50 @@ function markerIcon(offline: boolean) {
     iconAnchor: [12, 48],
     popupAnchor: [0, -52],
   })
+}
+
+// Same handoff as the app's directions button: Apple Maps on Apple devices,
+// Google Maps elsewhere - on phones both open the native maps app.
+function directionsUrl(latitude: number, longitude: number) {
+  const isApple =
+    typeof navigator !== "undefined" &&
+    /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent)
+  return isApple
+    ? `https://maps.apple.com/?daddr=${latitude},${longitude}`
+    : `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`
+}
+
+function MapPinIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-3.5 shrink-0"
+    >
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  )
+}
+
+function NavigationIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-3.5"
+    >
+      <polygon points="3 11 22 2 13 21 11 13 3 11" />
+    </svg>
+  )
 }
 
 function boardName(board: Board) {
@@ -48,8 +91,6 @@ function StationPopup({ station }: { station: Station }) {
     const bAvail = b.status === "available" ? 0 : 1
     return aAvail - bAvail
   })
-  const shown = sorted.slice(0, MAX_POPUP_BOARDS)
-  const hidden = sorted.length - shown.length
 
   return (
     <div className="w-[272px] font-sans">
@@ -92,63 +133,77 @@ function StationPopup({ station }: { station: Station }) {
         </div>
       </div>
 
+      {/* Address with directions - matches the app's station details sheet;
+          the whole row opens the visitor's default maps app */}
+      {station.address && (
+        <a
+          href={directionsUrl(station.latitude, station.longitude)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-2 px-3 pb-2.5 no-underline"
+        >
+          <span className="text-[#666]">
+            <MapPinIcon />
+          </span>
+          <span className="flex-1 text-xs leading-snug text-[#666] group-hover:text-ocean-950">
+            {station.address}
+          </span>
+          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-surf-500 text-white transition-colors group-hover:bg-surf-600">
+            <NavigationIcon />
+          </span>
+        </a>
+      )}
+
       {/* Boards with prices - matches the app's station details sheet */}
       {!offline && boards.length > 0 && (
         <>
           <div className="border-t border-slate-100" />
-          <div className="max-h-56 overflow-y-auto px-3 py-2">
-            {shown.map((board) => {
+          {/* All boards listed; tall enough that four rows never scroll,
+              longer lists scroll within the popup */}
+          <div className="max-h-[220px] overflow-y-auto px-3 py-1.5">
+            {sorted.map((board) => {
               const isAvailable = board.status === "available"
               return (
                 <div
                   key={board.id}
-                  className={`flex items-center gap-2.5 py-1.5 ${
+                  className={`flex items-center gap-2 py-1 ${
                     isAvailable ? "" : "opacity-45"
                   }`}
                 >
-                  <div className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-md bg-slate-100">
+                  <div className="flex size-7 shrink-0 items-center justify-center overflow-hidden rounded-md bg-slate-100">
                     {board.image || board.boardType?.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={board.image || board.boardType?.image}
                         alt=""
-                        className="size-8 object-contain"
+                        className="size-7 object-contain"
                       />
                     ) : (
                       <span className="text-sm">🏄</span>
                     )}
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-[13px] font-medium text-[#1a1a1a]">
+                  <div className="min-w-0 flex-1 leading-tight">
+                    <p className="truncate text-[12px] font-medium text-[#1a1a1a]">
                       {boardName(board)}
                     </p>
                     {!isAvailable && (
-                      <p className="text-[10px] font-semibold uppercase tracking-wide text-[#999]">
+                      <p className="text-[9px] font-semibold uppercase tracking-wide text-[#999]">
                         In use
                       </p>
                     )}
                   </div>
                   {typeof board.ratePerMinute === "number" && (
-                    <div className="shrink-0 text-right leading-tight">
-                      <p className="text-[13px] font-semibold text-ocean-950">
-                        ${board.ratePerMinute.toFixed(2)}
-                        <span className="text-[11px] font-normal text-[#999]">
-                          /min
-                        </span>
-                      </p>
-                      <p className="mt-0.5 text-[11px] text-[#999]">
-                        ${(board.ratePerMinute * 60).toFixed(2)}/hr
-                      </p>
-                    </div>
+                    <p className="shrink-0 text-[12px] font-semibold leading-tight text-ocean-950">
+                      ${board.ratePerMinute.toFixed(2)}
+                      <span className="font-normal text-[#999]">/min</span>{" "}
+                      <span className="text-[10px] font-normal text-[#999]">
+                        (${(board.ratePerMinute * 60).toFixed(2)}/hr)
+                      </span>
+                    </p>
                   )}
                 </div>
               )
             })}
-            {hidden > 0 && (
-              <p className="py-1 text-center text-[11px] text-[#999]">
-                +{hidden} more in the app
-              </p>
-            )}
           </div>
           {/* Same pricing notes as the app's confirm sheet; the $1 start fee
               is a fixed fee there too, not part of the station payload */}
