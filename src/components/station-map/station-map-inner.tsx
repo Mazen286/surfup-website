@@ -129,12 +129,17 @@ function StationPopup({ station }: { station: Station }) {
                     )}
                   </div>
                   {typeof board.ratePerMinute === "number" && (
-                    <p className="shrink-0 text-[13px] font-semibold text-ocean-950">
-                      ${board.ratePerMinute.toFixed(2)}
-                      <span className="text-[11px] font-normal text-[#999]">
-                        /min
-                      </span>
-                    </p>
+                    <div className="shrink-0 text-right leading-tight">
+                      <p className="text-[13px] font-semibold text-ocean-950">
+                        ${board.ratePerMinute.toFixed(2)}
+                        <span className="text-[11px] font-normal text-[#999]">
+                          /min
+                        </span>
+                      </p>
+                      <p className="mt-0.5 text-[11px] text-[#999]">
+                        ${(board.ratePerMinute * 60).toFixed(2)}/hr
+                      </p>
+                    </div>
                   )}
                 </div>
               )
@@ -145,12 +150,14 @@ function StationPopup({ station }: { station: Station }) {
               </p>
             )}
           </div>
-          {typeof station.freeMinutes === "number" &&
-            station.freeMinutes > 0 && (
-              <p className="border-t border-slate-100 px-3 py-2 text-center text-[11px] font-medium text-surf-600">
-                First {station.freeMinutes} minutes free
-              </p>
-            )}
+          {/* Same pricing notes as the app's confirm sheet; the $1 start fee
+              is a fixed fee there too, not part of the station payload */}
+          <p className="border-t border-slate-100 px-3 py-2 text-center text-[11px] font-medium text-surf-600">
+            $1 start fee
+            {typeof station.freeMinutes === "number" &&
+              station.freeMinutes > 0 &&
+              ` · First ${station.freeMinutes} minutes free`}
+          </p>
         </>
       )}
     </div>
