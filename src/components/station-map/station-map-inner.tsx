@@ -69,6 +69,11 @@ function NavigationIcon() {
   )
 }
 
+// "$1" for whole-dollar fees, "$2.50" otherwise
+function formatFee(fee: number) {
+  return Number.isInteger(fee) ? `$${fee}` : `$${fee.toFixed(2)}`
+}
+
 function boardName(board: Board) {
   const name = [board.boardType?.brand, board.boardType?.model]
     .filter(Boolean)
@@ -205,14 +210,24 @@ function StationPopup({ station }: { station: Station }) {
               )
             })}
           </div>
-          {/* Same pricing notes as the app's confirm sheet; the $1 start fee
-              is a fixed fee there too, not part of the station payload */}
-          <p className="border-t border-slate-100 px-3 py-2 text-center text-[11px] font-medium text-surf-600">
-            $1 start fee
-            {typeof station.freeMinutes === "number" &&
-              station.freeMinutes > 0 &&
-              ` · First ${station.freeMinutes} minutes free`}
-          </p>
+          {/* Same pricing notes as the app's confirm sheet. The start fee comes
+              from the station payload ($1 fallback for older API responses);
+              a zero fee isn't charged, so it isn't shown */}
+          {(station.startFee ?? 1) > 0 ||
+          (typeof station.freeMinutes === "number" && station.freeMinutes > 0) ? (
+            <p className="border-t border-slate-100 px-3 py-2 text-center text-[11px] font-medium text-surf-600">
+              {[
+                (station.startFee ?? 1) > 0
+                  ? `${formatFee(station.startFee ?? 1)} start fee`
+                  : null,
+                typeof station.freeMinutes === "number" && station.freeMinutes > 0
+                  ? `First ${station.freeMinutes} minutes free`
+                  : null,
+              ]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          ) : null}
         </>
       )}
     </div>

@@ -23,5 +23,6 @@ export interface Station {
   address?: string
   isOnline?: boolean
   freeMinutes?: number
+  startFee?: number
   boards?: Board[]
 }
