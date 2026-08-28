@@ -1,50 +1,8 @@
-"use client"
-
-import { useEffect, useState } from "react"
-import dynamic from "next/dynamic"
 import Link from "next/link"
 
-interface Board {
-  id: string
-  status: string
-  boardType: {
-    brand: string
-    model: string
-    sport: string
-    image: string
-  }
-}
-
-interface Station {
-  id: string
-  name: string
-  beach: string
-  latitude: number
-  longitude: number
-  businessName: string
-  address: string
-  boards: Board[]
-}
-
-const StationMapInner = dynamic(() => import("./station-map-inner"), {
-  ssr: false,
-  loading: () => (
-    <div className="flex h-[480px] items-center justify-center rounded-2xl border border-border bg-slate-100">
-      <p className="text-ocean-700/40">Loading map...</p>
-    </div>
-  ),
-})
+import { StationMapCanvas } from "@/components/station-map/station-map-canvas"
 
 export function StationMap() {
-  const [stations, setStations] = useState<Station[]>([])
-
-  useEffect(() => {
-    fetch("/api/stations")
-      .then((r) => r.json())
-      .then((data: Station[]) => setStations(data))
-      .catch(() => {})
-  }, [])
-
   return (
     <section id="find-us" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -55,12 +13,12 @@ export function StationMap() {
           Find a SurfPod Station Near You
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-ocean-700">
-          Surfboard rental stations across Hawaii and San Diego. Download
-          the app for real-time board availability.
+          Surfboard rental stations across Hawaii and San Diego. Tap a station
+          to see live board availability and prices.
         </p>
 
         <div className="mt-12">
-          <StationMapInner stations={stations} />
+          <StationMapCanvas />
         </div>
 
         <div className="mt-8 text-center">
