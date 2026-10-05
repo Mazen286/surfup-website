@@ -1,4 +1,4 @@
-const QR_CODE_PATTERN = /^[a-z0-9]{4,32}$/
+const QR_CODE_PATTERN = /^[a-z0-9-]{3,32}$/
 const PLATFORMS = ["ios", "android"]
 
 interface QrClick {

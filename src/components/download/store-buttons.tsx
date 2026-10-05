@@ -7,7 +7,7 @@ import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/constants"
 
 type Platform = "ios" | "android"
 
-const QR_CODE_PATTERN = /^[a-z0-9]{4,32}$/
+const QR_CODE_PATTERN = /^[a-z0-9-]{3,32}$/
 
 function getQrCode(value: string | null): string | null {
   return value && QR_CODE_PATTERN.test(value) ? value : null
