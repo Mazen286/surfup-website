@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { APP_STORE_URL, PLAY_STORE_URL, COMPANY_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants"
+import { COMPANY_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants"
 import { StationMapCanvas } from "@/components/station-map/station-map-canvas"
+import { StoreButtons } from "@/components/download/store-buttons"
 
 export const metadata: Metadata = {
   title: "Download the SurfUp App",
@@ -59,38 +60,7 @@ export default function DownloadPage() {
                 Rent surfboards in seconds. Find a SurfPod near you, scan your
                 board, and hit the water. Available 24/7, no reservations needed.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="/images/app-store.png"
-                    alt="Download on the App Store"
-                    width={200}
-                    height={67}
-                    sizes="200px"
-                    className="h-16 w-auto sm:h-[72px]"
-                  />
-                </a>
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-105"
-                >
-                  <Image
-                    src="/images/google-play.png"
-                    alt="Get it on Google Play"
-                    width={200}
-                    height={67}
-                    sizes="200px"
-                    className="h-16 w-auto sm:h-[72px]"
-                  />
-                </a>
-              </div>
+              <StoreButtons />
             </div>
             <div className="flex justify-center">
               <Image
