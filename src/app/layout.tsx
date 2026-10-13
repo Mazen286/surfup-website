@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii & San Diego`,
+    default: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii`,
     template: `%s | ${COMPANY_NAME}`,
   },
   description:
-    "Rent a surfboard in seconds with SurfUp. Find a SurfPod station near you in Hawaii or San Diego, scan the app, and go. Available 24/7.",
+    "Rent a surfboard in seconds with SurfUp. Find a SurfPod station near you in Hawaii, scan the app, and go. Available 24/7.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
@@ -48,11 +48,10 @@ const jsonLd = {
       logo: `${SITE_URL}/images/logo-white.png`,
       email: COMPANY_EMAIL,
       description:
-        "Automated surfboard rental stations in Hawaii and San Diego. Rent a board 24/7 with the SurfUp app.",
+        "Automated surfboard rental stations in Hawaii. Rent a board 24/7 with the SurfUp app.",
       foundingDate: "2023",
       areaServed: [
         { "@type": "State", name: "Hawaii" },
-        { "@type": "City", name: "San Diego", containedInPlace: { "@type": "State", name: "California" } },
       ],
       sameAs: [
         "https://www.instagram.com/surfupapp",
@@ -68,7 +67,7 @@ const jsonLd = {
       image: `${SITE_URL}/images/og-default.jpg`,
       email: COMPANY_EMAIL,
       description:
-        "Self-service surfboard rental stations available 24/7 at beaches, resorts, and campuses in Hawaii and San Diego.",
+        "Self-service surfboard rental stations available 24/7 at beaches, resorts, and campuses in Hawaii.",
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
@@ -82,7 +81,7 @@ const jsonLd = {
         opens: "00:00",
         closes: "23:59",
       },
-      areaServed: ["Hawaii", "San Diego, CA"],
+      areaServed: ["Hawaii"],
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
     },
     {
@@ -93,7 +92,7 @@ const jsonLd = {
       serviceType: "Surfboard Rental",
       description:
         "Automated self-service surfboard rentals from SurfPod stations. Scan the app, grab a board, and surf. Available 24/7 with no reservations needed.",
-      areaServed: ["Hawaii", "San Diego, CA"],
+      areaServed: ["Hawaii"],
     },
     {
       "@type": "WebSite",
@@ -105,7 +104,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": `${SITE_URL}/#webpage`,
       url: SITE_URL,
-      name: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii & San Diego`,
+      name: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii`,
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#organization` },
     },

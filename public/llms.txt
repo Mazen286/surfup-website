@@ -1,6 +1,6 @@
 # SurfUp
 
-> Automated surfboard rental stations in Hawaii and San Diego. Rent a surfboard 24/7 with the SurfUp app.
+> Automated surfboard rental stations in Hawaii. Rent a surfboard 24/7 with the SurfUp app.
 
 SurfUp operates self-service SurfPod stations at beaches, resorts, and campuses. Customers download the app, scan a board, and surf. No reservations, no staff, available around the clock.
 
@@ -23,4 +23,4 @@ SurfUp operates self-service SurfPod stations at beaches, resorts, and campuses.
 
 - Founded: 2023
 - Based in: San Diego, CA
-- Service areas: Hawaii, San Diego
+- Service areas: Hawaii

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: COMPANY_NAME,
-    title: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii & San Diego`,
+    title: `${COMPANY_NAME} | Automated Surfboard Rentals in Hawaii`,
     description:
       "Rent a surfboard in seconds. Find a SurfPod near you, scan the app, and go. Available 24/7.",
     url: SITE_URL,

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 const PHRASES = [
-  "Hawaii & San Diego. Available 24/7.",
+  "Now in Hawaii. Available 24/7.",
   "No reservations needed.",
   "30 seconds to surf.",
   "Scan. Grab. Go.",

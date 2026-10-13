@@ -30,7 +30,7 @@ export function WhyItMatters() {
                 </p>
                 <p className="mt-2 text-lg leading-relaxed text-ocean-700">
                   Self-service surfboard rental stations at beaches, resorts,
-                  and campuses in Hawaii and San Diego. Available 24/7, no
+                  and campuses in Hawaii. Available 24/7, no
                   staff required. Customers scan, grab a surfboard, and go.
                 </p>
               </div>
