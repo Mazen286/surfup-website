@@ -50,7 +50,7 @@ export function MediaLogos() {
         </FadeIn>
       </div>
       <div className="relative mt-10 overflow-hidden">
-        <div className="animate-marquee flex shrink-0">
+        <div className="animate-marquee flex w-max shrink-0">
           <LogoSet />
           <LogoSet />
           <LogoSet />
