@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/shared/fade-in"
 const STEPS = [
   {
     title: "Scan",
-    description: "Find a SurfPod station in Hawaii or San Diego. Scan a surfboard to start your rental.",
+    description: "Find a SurfPod station in Hawaii. Scan a surfboard to start your rental.",
     image: "/images/app-scan.png",
     alt: "SurfUp app showing the QR code scan screen to unlock a surfboard",
   },

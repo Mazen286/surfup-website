@@ -7,7 +7,7 @@ import { StoreButtons } from "@/components/download/store-buttons"
 export const metadata: Metadata = {
   title: "Download the SurfUp App",
   description:
-    "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii and San Diego. Available 24/7.",
+    "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii. Available 24/7.",
   alternates: { canonical: "/download" },
   openGraph: {
     type: "website",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: COMPANY_NAME,
     title: "Download the SurfUp App",
     description:
-      "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii and San Diego.",
+      "Get the SurfUp app for iPhone or Android. Rent surfboards from SurfPod stations in Hawaii.",
     url: `${SITE_URL}/download`,
     images: [OG_IMAGE],
   },

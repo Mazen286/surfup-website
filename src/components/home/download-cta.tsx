@@ -44,7 +44,7 @@ export function DownloadCta() {
             </h2>
             <p className="mt-6 max-w-xl text-xl text-white/90">
               Download the SurfUp app, find a SurfPod surfboard rental station
-              near you in Hawaii or San Diego, and get on the water in minutes.
+              near you in Hawaii and get on the water in minutes.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
               <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">

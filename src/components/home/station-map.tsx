@@ -13,7 +13,7 @@ export function StationMap() {
           Find a SurfPod Station Near You
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-center text-ocean-700">
-          Surfboard rental stations across Hawaii and San Diego. Tap a station
+          Surfboard rental stations across Hawaii. Tap a station
           to see live board availability and prices.
         </p>
 

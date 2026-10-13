@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: COMPANY_NAME,
     title: "Meet the SurfUp Team",
     description:
-      "The team behind SurfUp, building automated surfboard rental stations in Hawaii and San Diego.",
+      "The team behind SurfUp, building automated surfboard rental stations in Hawaii.",
     url: `${SITE_URL}/team`,
     images: [OG_IMAGE],
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     site: "@surfupapp",
     title: "Meet the SurfUp Team",
     description:
-      "The team behind SurfUp, building automated surfboard rental stations in Hawaii and San Diego.",
+      "The team behind SurfUp, building automated surfboard rental stations in Hawaii.",
     images: ["/images/og-default.jpg"],
   },
 }
