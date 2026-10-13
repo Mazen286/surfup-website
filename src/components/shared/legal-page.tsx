@@ -17,7 +17,8 @@ export async function LegalPage({
   try {
     const res = await fetch(
       `https://surfup.azurewebsites.net/api/v1/legal/${type}`,
-      { next: { revalidate: 86400 } }
+      // Short so an edit published in Tower shows here within minutes.
+      { next: { revalidate: 300 } }
     )
     if (res.ok) {
       doc = await res.json()
