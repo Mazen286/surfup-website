@@ -118,8 +118,19 @@ body {
     animation: marquee 25s linear infinite;
   }
 
-  .animate-marquee:hover {
-    animation-play-state: paused;
+  /* Logos are smaller on phones, so the same duration covers fewer pixels
+     and looks sluggish. */
+  @media (max-width: 639px) {
+    .animate-marquee {
+      animation-duration: 16s;
+    }
+  }
+
+  /* Touch screens keep :hover after a tap, which would leave it paused. */
+  @media (hover: hover) {
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
   }
 
   .text-gradient-hero {
