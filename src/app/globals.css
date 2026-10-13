@@ -114,15 +114,15 @@ body {
     animation: slow-zoom 20s ease-out forwards;
   }
 
+  /* One loop moves one logo set (25% of the w-max track), so speed is set
+     width / duration: about 40 px/s at both sizes. */
   .animate-marquee {
-    animation: marquee 25s linear infinite;
+    animation: marquee 36s linear infinite;
   }
 
-  /* Logos are smaller on phones, so the same duration covers fewer pixels
-     and looks sluggish. */
   @media (max-width: 639px) {
     .animate-marquee {
-      animation-duration: 16s;
+      animation-duration: 28s;
     }
   }
 
