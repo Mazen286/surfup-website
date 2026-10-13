@@ -81,13 +81,28 @@ export const ADVISORS: TeamMember[] = [
   },
 ]
 
-export const MEDIA = [
+export const MEDIA: { name: string; logo: string; url?: string }[] = [
+  {
+    name: "Pacific Business News",
+    logo: "/images/media/pbn.png",
+    url: "https://www.bizjournals.com/pacific/news/2026/10/08/automated-surf-rental-hyatt-regency.html",
+  },
+  {
+    name: "KHON2",
+    logo: "/images/media/khon2.png",
+    url: "https://www.khon2.com/local-news/hawaii-surfpod-app-launch-hyatt-waikiki/",
+  },
+  {
+    name: "AOL",
+    logo: "/images/media/aol.png",
+    url: "https://www.aol.com/articles/surfpod-station-easy-access-waikiki-223502000.html",
+  },
   { name: "ABC 10 News San Diego", logo: "/images/media/abc10.webp" },
   { name: "CBS 8", logo: "/images/media/cbs8.webp" },
   { name: "San Diego Union-Tribune", logo: "/images/media/sdut.jpg" },
   { name: "Spectrum News 1", logo: "/images/media/spectrum.webp" },
   { name: "UC San Diego", logo: "/images/media/ucsd.webp" },
-] as const
+]
 
 export const NAV_LINKS = [
   { label: "How It Works", href: "/#how-it-works" },

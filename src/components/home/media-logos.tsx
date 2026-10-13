@@ -7,8 +7,8 @@ import { FadeIn } from "@/components/shared/fade-in"
 function LogoSet() {
   return (
     <>
-      {MEDIA.map((outlet, i) => (
-        <div key={`${outlet.name}-${i}`} className="mx-10 shrink-0 sm:mx-14">
+      {MEDIA.map((outlet, i) => {
+        const logo = (
           <Image
             src={outlet.logo}
             alt={outlet.name}
@@ -17,8 +17,24 @@ function LogoSet() {
             sizes="160px"
             className="h-12 w-auto object-contain opacity-50 grayscale transition-all hover:opacity-100 hover:grayscale-0 sm:h-16"
           />
-        </div>
-      ))}
+        )
+        return (
+          <div key={`${outlet.name}-${i}`} className="mx-10 shrink-0 sm:mx-14">
+            {outlet.url ? (
+              <a
+                href={outlet.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Read the SurfUp story on ${outlet.name}`}
+              >
+                {logo}
+              </a>
+            ) : (
+              logo
+            )}
+          </div>
+        )
+      })}
     </>
   )
 }
