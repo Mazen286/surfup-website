@@ -83,6 +83,11 @@ export const ADVISORS: TeamMember[] = [
 
 export const MEDIA: { name: string; logo: string; url?: string }[] = [
   {
+    name: "Surfer",
+    logo: "/images/media/surfer.png",
+    url: "https://www.surfer.com/gear/contactless-surfboard-rental-station-open-waikiki",
+  },
+  {
     name: "Pacific Business News",
     logo: "/images/media/pbn.png",
     url: "https://www.bizjournals.com/pacific/news/2026/10/08/automated-surf-rental-hyatt-regency.html",
@@ -91,6 +96,11 @@ export const MEDIA: { name: string; logo: string; url?: string }[] = [
     name: "KHON2",
     logo: "/images/media/khon2.png",
     url: "https://www.khon2.com/local-news/hawaii-surfpod-app-launch-hyatt-waikiki/",
+  },
+  {
+    name: "Hoodline",
+    logo: "/images/media/hoodline.png",
+    url: "https://hoodline.com/2026/10/waikiki-gets-phone-unlocked-surfboard-rentals-at-hyatt-regency/",
   },
   {
     name: "AOL",
