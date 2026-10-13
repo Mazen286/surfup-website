@@ -97,11 +97,27 @@ export const MEDIA: { name: string; logo: string; url?: string }[] = [
     logo: "/images/media/aol.png",
     url: "https://www.aol.com/articles/surfpod-station-easy-access-waikiki-223502000.html",
   },
-  { name: "ABC 10 News San Diego", logo: "/images/media/abc10.webp" },
-  { name: "CBS 8", logo: "/images/media/cbs8.webp" },
+  {
+    name: "ABC 10 News San Diego",
+    logo: "/images/media/abc10.webp",
+    url: "https://www.10news.com/news/local-news/local-company-surf-up-is-in-the-business-of-renting-surfboards",
+  },
+  {
+    name: "CBS 8",
+    logo: "/images/media/cbs8.webp",
+    url: "https://www.cbs8.com/article/news/local/surfup-surfboard-rentals-in-pb/509-341c044b-40c2-49d7-884a-d94ef48ca9e0",
+  },
   { name: "San Diego Union-Tribune", logo: "/images/media/sdut.jpg" },
-  { name: "Spectrum News 1", logo: "/images/media/spectrum.webp" },
-  { name: "UC San Diego", logo: "/images/media/ucsd.webp" },
+  {
+    name: "Spectrum News 1",
+    logo: "/images/media/spectrum.webp",
+    url: "https://spectrumnews1.com/ca/la/sports/2023/02/03/scan--surf----shaka-with-a-surfboard-rental-app",
+  },
+  {
+    name: "UC San Diego",
+    logo: "/images/media/ucsd.webp",
+    url: "https://today.ucsd.edu/story/surfs-up-in-san-diego-thanks-to-alumni-led-startup",
+  },
 ]
 
 export const NAV_LINKS = [
