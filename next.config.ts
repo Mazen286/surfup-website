@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
         destination: "https://surfup.azurewebsites.net/q/:code",
         permanent: false,
       },
+      // Released app builds link to these older paths for the legal pages.
+      { source: "/terms-of-service", destination: "/terms", permanent: true },
+      { source: "/privacy-policy", destination: "/privacy", permanent: true },
     ]
   },
 }
