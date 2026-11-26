@@ -21,6 +21,6 @@ SurfUp operates self-service SurfPod stations at beaches, resorts, and campuses.
 
 ## Company
 
-- Founded: 2023
+- Founded: 2018
 - Based in: San Diego, CA
 - Service areas: Hawaii
