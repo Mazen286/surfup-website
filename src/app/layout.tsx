@@ -49,7 +49,7 @@ const jsonLd = {
       email: COMPANY_EMAIL,
       description:
         "Automated surfboard rental stations in Hawaii. Rent a board 24/7 with the SurfUp app.",
-      foundingDate: "2023",
+      foundingDate: "2018",
       areaServed: [
         { "@type": "State", name: "Hawaii" },
       ],
